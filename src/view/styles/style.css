@@ -1,0 +1,33 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.ladoDeVisualizacoes {
+  height: 100vh;
+  width: 50%;
+}
+
+.ladoDeCadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 100vh;
+}
+
+.parteSuperiorComInputs {
+  border: 1px solid white;
+}
+.parteInferiorComBotao {
+  border: 1px solid white;
+}
