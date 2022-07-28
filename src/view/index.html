@@ -5,20 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fira+Sans&family=Poppins:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <title>Challlenge</title>
+    <!DOCTYPE html>
   </head>
+
   <body>
     <main>
       <div class="ladoDeCadastro">
         <div class="parteSuperiorComInputs">
           <form>
             <div class="InputsDoTipoPreencher">
-              <input type="text" placeholder="Nome Cliente" />
-              <input type="number" placeholder="Peso da Entrega" />
+              <input id="nomeCliente" type="text" placeholder="Nome Cliente" />
+              <input
+                id="pesoEntrega"
+                type="number"
+                placeholder="Peso da Entrega"
+              />
               <input class="cep" type="text" placeholder="Endereço Cliente" />
             </div>
 
@@ -42,11 +45,22 @@
         </div>
 
         <div class="parteInferiorComBotao">
-          <button class="botaoFormulario">RESETAR CADASTRO</button>
+          <button class="botaoFormulario cadastrarCliente">
+            RESETAR CADASTRO
+          </button>
         </div>
       </div>
 
-      <div class="ladoDeVisualizacoes"></div>
+      <div class="ladoDeVisualizacoes">
+        <div id="map">
+          <script
+            src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly"
+            defer
+          ></script>
+        </div>
+      </div>
     </main>
+
+    <script type="text/javascript" src="../App.js"></script>
   </body>
 </html>
