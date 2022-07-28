@@ -1,23 +1,10 @@
-const nomeDoCliente = document.querySelector("#nomeCliente");
-const pesoDaEntrega = document.querySelector("#pesoEntrega");
+const app = require("express");
+const path = require("path");
 
-const botaoFormularioCadastrar = document.querySelector(".cadastrarCliente");
-
-botaoFormularioCadastrar.addEventListener("click", () => {
-  let teste = nomeDoCliente.value;
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-function initMap() {
-  // The location of Uluru
-  const uluru = { lat: -25.344, lng: 131.031 };
-  // The map, centered at Uluru
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: uluru,
-  });
-  // The marker, positioned at Uluru
-  const marker = new google.maps.Marker({
-    position: uluru,
-    map: map,
-  });
-}
+// no fim, iniciamos o serviço na porta 8001
+app.listen(8080);
+console.log("8080 é a porta mágica!");
