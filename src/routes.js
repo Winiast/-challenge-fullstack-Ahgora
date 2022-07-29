@@ -1,15 +1,19 @@
 const express = require("express");
 const app = express();
-const path = require("path");
-const router = express.Router();
+const port = 8080;
 
-app.use(express.static(__dirname + "/view"));
+app.use(express.static(__dirname + "/public"));
 
-router.get("/", function (req, res) {
-  res.sendFile("index.html");
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
 });
 
-app.use("/", router);
-app.listen(process.env.port || 8080);
+app.post("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
-console.log("server rodando");
+// app.get()
+
+app.listen(port, () => {
+  console.log(`Server rodando na porta http://localhost:${port}`);
+});
