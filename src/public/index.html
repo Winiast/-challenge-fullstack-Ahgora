@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css" />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <title>Challlenge</title>
     <!DOCTYPE html>
   </head>
@@ -39,36 +38,35 @@
             </div>
 
             <div class="parteDoBotaoCadastrar">
-              <button class="botaoFormulario">CADASTRAR CLIENTE</button>
+              <input type="submit" value="CADASTRAR CLIENTE" class="botaoFormulario"></input>
             </div>
           </form>
         </div>
 
         <div class="parteInferiorComBotao">
-          <button class="botaoFormulario cadastrarCliente">
-            RESETAR CADASTRO
-          </button>
+          <input type="submit" value="RESETAR CADASTRO" class="botaoFormulario cadastrarCliente">
+          </input>
         </div>
       </div>
 
       <div class="ladoDeVisualizacoes">
         <div id="map">
-          <!-- <script
-            defer
-          ></script> -->
-          <iframe
-            src="https://www.google.com/maps/d/u/0/embed?mid=1wl8m-m7ne04h5wejb4MKq2_Moc7i05A&ehbc=2E312F"
-            width="640"
-            height="480"
-          ></iframe>
+
+          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wl8m-m7ne04h5wejb4MKq2_Moc7i05A&ehbc=2E312F" width="640" height="480"></iframe>
         </div>
 
-        <table></table>
+        <table id="visualizacaoDaTabela">
+          <td class="tdPrincipal">Nome</td>
+          <td class="tdPrincipal">Rua</td>
+          <td class="tdPrincipal">Cidade</td>
+          <td class="tdPrincipal">Pais</td>
+          <td class="tdPrincipal">Peso</td>
+          <td class="tdPrincipal">Lat</td>
+          <td class="tdPrincipal">Lng</td>
+        </table>
       </div>
     </main>
 
-    <script type="text/javascript" src="../App.js"></script>
-    <script type="text/javascript" src="../public/view/mapa.js"></script>
-    <script type="text/javascript" src="../public/view/pegandoDOM.js"></script>
+    <script type="text/javascript" src="./view/pegandoDOM.js"></script>
   </body>
 </html>

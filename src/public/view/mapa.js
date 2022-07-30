@@ -1,3 +1,4 @@
+// Initialize and add the map
 function initMap() {
   // The location of Uluru
   const uluru = { lat: -25.344, lng: 131.031 };
@@ -12,3 +13,5 @@ function initMap() {
     map: map,
   });
 }
+
+window.initMap = initMap;

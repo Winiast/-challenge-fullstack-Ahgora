@@ -12,8 +12,6 @@ app.post("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-// app.get()
-
 app.listen(port, () => {
   console.log(`Server rodando na porta http://localhost:${port}`);
 });
