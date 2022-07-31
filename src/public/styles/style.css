@@ -128,3 +128,12 @@ main {
   padding: 10px;
   border: 1px solid white;
 }
+
+.teste {
+  display: flex;
+  flex-direction: row;
+}
+
+.teste input {
+  width: 50%;
+}

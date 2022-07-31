@@ -16,9 +16,11 @@ function guardaInformações() {
 
   let pacote = {
     nomeDoCliente: nomeCliente,
-    pesoDaEntrega: pesoDaEntrega,
+    pesoDaEntrega: pesoEntrega,
     enderecoDaConsulta: endereco,
   };
+
+  codeAddress();
 
   return pacote;
 }

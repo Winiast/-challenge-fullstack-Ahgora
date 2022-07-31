@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+    <script type="module" src="./view/mapa.js"></script>
     <title>Challlenge</title>
     <!DOCTYPE html>
   </head>
 
-  <body>
+  <body onload="initialize()">
     <main>
       <div class="ladoDeCadastro">
         <div class="parteSuperiorComInputs">
@@ -21,7 +22,9 @@
                 type="number"
                 placeholder="Peso da Entrega"
               />
-              <input class="cep" type="text" placeholder="Endereço Cliente" />
+              <div class="teste">
+              <input id="address" type="textbox" class="cep" type="text" placeholder="Endereço Cliente" />    <input type="button" value="Encode" onclick="codeAddress()">
+              </div>
             </div>
 
             <div class="mostraValoresLatitudeELongitude">
@@ -50,10 +53,19 @@
       </div>
 
       <div class="ladoDeVisualizacoes">
-        <div id="map">
+        
+        <div id="map"></div>
 
-          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wl8m-m7ne04h5wejb4MKq2_Moc7i05A&ehbc=2E312F" width="640" height="480"></iframe>
-        </div>
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8PeEgaAitO_ZZvf7FSaeG4H7sSVdyo_Q&callback=initMap&v=weekly"
+      defer
+    ></script>
 
         <table id="visualizacaoDaTabela">
           <td class="tdPrincipal">Nome</td>
@@ -68,5 +80,6 @@
     </main>
 
     <script type="text/javascript" src="./view/pegandoDOM.js"></script>
+    <script type="text/javascript" src="./view/mapa.js"></script>
   </body>
 </html>
