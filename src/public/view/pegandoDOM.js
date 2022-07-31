@@ -6,7 +6,7 @@ const botaoFormularioCadastrar = document.querySelector(".botaoFormulario");
 botaoFormularioCadastrar.addEventListener("click", (e) => {
   e.preventDefault();
 
-  console.log(guardaInformações());
+  // console.log(guardaInformações());
 });
 
 function guardaInformações() {

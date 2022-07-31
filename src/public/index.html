@@ -10,7 +10,7 @@
     <!DOCTYPE html>
   </head>
 
-  <body onload="initialize()">
+  <body onload="IniciacaoDoMapa()">
     <main>
       <div class="ladoDeCadastro">
         <div class="parteSuperiorComInputs">
@@ -23,7 +23,7 @@
                 placeholder="Peso da Entrega"
               />
               <div class="teste">
-              <input id="address" type="textbox" class="cep" type="text" placeholder="Endereço Cliente" />    <input type="button" value="Buscar" onclick="codeAddress()">
+              <input id="address" type="textbox" class="cep" type="text" placeholder="Endereço Cliente" />    <input type="button" value="Buscar" onclick="pegaInformacoesEndereco()">
               </div>
             </div>
 
@@ -41,7 +41,7 @@
             </div>
 
             <div class="parteDoBotaoCadastrar">
-              <input type="submit" value="CADASTRAR CLIENTE" class="botaoFormulario"></input>
+              <input type="submit" onclick="testeDeJson()" value="CADASTRAR CLIENTE" class="botaoFormulario"></input>
             </div>
           </form>
         </div>
