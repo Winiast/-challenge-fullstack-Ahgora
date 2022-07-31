@@ -5,6 +5,7 @@ let informacoesDeEndereco;
 let rua, cidade, pais, peso;
 let latidudeBanco;
 let longitudeBanco;
+
 function IniciacaoDoMapa() {
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(-34.397, 150.644);
@@ -14,6 +15,7 @@ function IniciacaoDoMapa() {
   };
   map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
+window.IniciacaoDoMapa = IniciacaoDoMapa;
 
 function pegaInformacoesEndereco() {
   var address = document.querySelector("#address").value;
@@ -31,7 +33,6 @@ function pegaInformacoesEndereco() {
       pais = response.address_components[5].long_name;
       latidudeBanco = response.geometry.location.lat;
       longitudeBanco = response.geometry.location.lng;
-
       informacoesDeEndereco = {
         rua: rua,
         cidade: cidade,
@@ -47,4 +48,7 @@ function pegaInformacoesEndereco() {
   });
 }
 
-window.IniciacaoDoMapa = IniciacaoDoMapa;
+// Funções que precisam ser exportadas para outros locais mas não sei fazer ainda
+
+// const latitudeDOM = document.querySelector("#Latitude");
+// const longitudeDOM = document.querySelector("#Longitude");

@@ -1,16 +1,15 @@
 const nomeDoCliente = document.querySelector("#nomeCliente");
 const pesoDaEntrega = document.querySelector("#pesoEntrega");
 const enderecoCliente = document.querySelector(".cep");
-const botaoFormularioCadastrar = document.querySelector(".botaoFormulario");
+// const botaoFormularioCadastrar = document.querySelector(".botaoFormulario");
 
-botaoFormularioCadastrar.addEventListener("click", (e) => {
-  e.preventDefault();
+// botaoFormularioCadastrar.addEventListener("click", (e) => {
+//   e.preventDefault();
 
-  let teste = informacoesDeEndereco;
-  console.log(teste);
+//   console.log(teste);
 
-  // console.log(guardaInformações());
-});
+//   // console.log(guardaInformações());
+// });
 
 function guardaInformações() {
   const nomeCliente = nomeDoCliente.value;
