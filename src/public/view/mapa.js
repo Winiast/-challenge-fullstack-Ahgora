@@ -22,8 +22,21 @@ function pegaInformacoesEndereco() {
       map.setCenter(results[0].geometry.location);
       response = JSON.stringify(results[0]);
       response = JSON.parse(response);
+      rua = response.address_components[1].long_name;
+      cidade = response.address_components[3].long_name;
+      pais = response.address_components[5].long_name;
       latidudeBanco = response.geometry.location.lat;
       longitudeBanco = response.geometry.location.lng;
+
+      informacoesDeEndereco = {
+        rua: rua,
+        cidade: cidade,
+        pais: pais,
+        latidudeBanco: latidudeBanco,
+        longitudeBanco: longitudeBanco,
+      };
+      console.log(informacoesDeEndereco);
+      return informacoesDeEndereco;
       var marker = new google.maps.Marker({
         map: map,
         position: results[0].geometry.location,
