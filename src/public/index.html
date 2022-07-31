@@ -22,8 +22,8 @@
                 type="number"
                 placeholder="Peso da Entrega"
               />
-              <div class="teste">
-              <input id="address" type="textbox" class="cep" type="text" placeholder="Endereço Cliente" />    <input type="button" value="Buscar" onclick="pegaInformacoesEndereco()">
+              <div class="buscarEndereco">
+              <input id="address" type="textbox" class="cep" type="text" placeholder="Endereço Cliente" />    <input type="button" id="buscar" value="Buscar" onclick="pegaInformacoesEndereco()">
               </div>
             </div>
 
@@ -63,7 +63,7 @@
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
     -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8PeEgaAitO_ZZvf7FSaeG4H7sSVdyo_Q&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8PeEgaAitO_ZZvf7FSaeG4H7sSVdyo_Q&callback=IniciacaoDoMapa&v=weekly"
       defer
     ></script>
 
@@ -79,7 +79,7 @@
       </div>
     </main>
 
-    <script type="text/javascript" src="./view/pegandoDOM.js"></script>
-    <script type="text/javascript" src="./view/mapa.js"></script>
+    <script type="text/javascript" src="./view/ManipulandoDOM.js"></script>
+    <script type="text/javascript" src="./view/Mapa.js"></script>
   </body>
 </html>

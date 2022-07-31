@@ -6,6 +6,9 @@ const botaoFormularioCadastrar = document.querySelector(".botaoFormulario");
 botaoFormularioCadastrar.addEventListener("click", (e) => {
   e.preventDefault();
 
+  let teste = informacoesDeEndereco;
+  console.log(teste);
+
   // console.log(guardaInformações());
 });
 
@@ -19,8 +22,6 @@ function guardaInformações() {
     pesoDaEntrega: pesoEntrega,
     enderecoDaConsulta: endereco,
   };
-
-  codeAddress();
 
   return pacote;
 }
