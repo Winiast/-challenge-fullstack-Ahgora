@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css" />
-    <script type="module" src="./view/mapa.js"></script>
+    <script type="module" src="./view/Mapa.js"></script>
     <title>Challlenge</title>
     <!DOCTYPE html>
   </head>
@@ -22,18 +22,20 @@
                 type="number"
                 placeholder="Peso da Entrega"
               />
-              <div class="teste">
-              <input id="address" type="textbox" class="cep" type="text" placeholder="Endereço Cliente" />    <input type="button" value="Buscar" onclick="pegaInformacoesEndereco()">
+              <div class="buscarEndereco">
+              <input id="address" type="textbox" class="cep" type="text" placeholder="Endereço Cliente" />    <input type="button" id="buscar" value="Buscar" onclick="pegaInformacoesEndereco()">
               </div>
             </div>
 
             <div class="mostraValoresLatitudeELongitude">
               <input
+                id="Latitude"
                 class="valoresCordenada"
                 type="text"
                 placeholder="Latitude"
               />
               <input
+                id="Longitude"
                 class="valoresCordenada"
                 type="text"
                 placeholder="Longitude"
@@ -41,7 +43,7 @@
             </div>
 
             <div class="parteDoBotaoCadastrar">
-              <input type="submit" onclick="testeDeJson()" value="CADASTRAR CLIENTE" class="botaoFormulario"></input>
+              <input type="submit"  value="CADASTRAR CLIENTE" class="botaoFormulario"></input>
             </div>
           </form>
         </div>
@@ -63,7 +65,7 @@
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
     -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8PeEgaAitO_ZZvf7FSaeG4H7sSVdyo_Q&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8PeEgaAitO_ZZvf7FSaeG4H7sSVdyo_Q&callback=IniciacaoDoMapa&v=weekly"
       defer
     ></script>
 
@@ -79,7 +81,9 @@
       </div>
     </main>
 
-    <script type="text/javascript" src="./view/pegandoDOM.js"></script>
-    <script type="text/javascript" src="./view/mapa.js"></script>
+    
+    
   </body>
+    <script type="text/javascript" src="./view/Mapa.js"></script>
+    <script type="text/javascript" src="./view/ManipulandoDOM.js"></script>
 </html>
