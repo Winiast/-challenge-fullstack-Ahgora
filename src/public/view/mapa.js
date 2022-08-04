@@ -8,6 +8,8 @@ let informacoesDeEndereco;
 let rua, cidade, pais, peso;
 let latidudeBanco;
 let longitudeBanco;
+let pacote;
+let enderecoDaConsulta;
 
 function IniciacaoDoMapa() {
   geocoder = new google.maps.Geocoder();
@@ -54,3 +56,58 @@ function pegaInformacoesEndereco() {
 }
 
 // Funções que precisam ser exportadas para outros locais mas não sei fazer ainda
+
+// Puxando DOM
+
+const nomeDoCliente = document.querySelector("#nomeCliente");
+const pesoDaEntrega = document.querySelector("#pesoEntrega");
+const enderecoCliente = document.querySelector(".cep");
+const botaoFormularioCadastrar = document.querySelector(".botaoFormulario");
+
+botaoFormularioCadastrar.addEventListener("click", (e) => {
+  // e.preventDefault();
+  guardaInformações();
+});
+
+function guardaInformações() {
+  const nomeCliente = nomeDoCliente.value;
+  const pesoEntrega = pesoDaEntrega.value;
+
+  pacote = {
+    nomeDoCliente: nomeCliente,
+    pesoDaEntrega: pesoEntrega,
+    enderecoDaConsulta: null,
+  };
+  pacote.enderecoDaConsulta = informacoesDeEndereco;
+  return pacote;
+}
+let dadosUsuario = guardaInformações();
+
+// Parte do banco de dados
+
+const Client = new require("pg").Client;
+const cliente = new Client({
+  user: "postgres",
+  password: "",
+  host: "127.0.0.1",
+  port: 5432,
+  database: "bancoJava",
+});
+
+async function setUsuarios() {
+  try {
+    console.log("Iniciando conexao");
+    await cliente.connect();
+    console.log("Conexao deu certo");
+    const resultado = await cliente.query(
+      "INSERT INTO challenge(nome, peso, logradouro, pais, estado, cidade, bairro, numero, latitude, longitude) VALUES  (?, ?, 'Rua bento de Oliveira Rocha', 'Brasil', 'Parana', 'Paranagua', 'Sao Vicente', 925, -25.000, 48.000)",
+      [pacote.nomeCliente, pacote.pesoDaEntrega]
+    );
+    console.table(resultado.rows);
+  } catch (error) {
+    console.log("Ocorreu um erro" + error.message);
+  } finally {
+    await cliente.end();
+    console.log("Conexao finalizada");
+  }
+}
